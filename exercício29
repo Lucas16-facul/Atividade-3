@@ -1,0 +1,35 @@
+nomes = ["Ana", "Bruno", "Carlos", "Daniela", "Eduardo", "Fernanda"]
+telefones = [
+    "21999990001",
+    "21999990002",
+    "21999990003",
+    "21999990004",
+    "21999990005",
+    "21999990006"
+]
+
+nome = input("Digite o nome do contato: ")
+
+inicio = 0
+fim = len(nomes) - 1
+posicao = -1
+
+while inicio <= fim:
+    meio = (inicio + fim) // 2
+
+    if nomes[meio].lower() == nome.lower():
+        posicao = meio
+        break
+
+    elif nome.lower() < nomes[meio].lower():
+        fim = meio - 1
+
+    else:
+        inicio = meio + 1
+
+if posicao != -1:
+    print("Contato encontrado.")
+    print("Nome:", nomes[posicao])
+    print("Telefone:", telefones[posicao])
+else:
+    print("Contato não encontrado.")
