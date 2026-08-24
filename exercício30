@@ -1,0 +1,97 @@
+lista = []
+ordenada = False
+
+while True:
+
+    print("\n===== MENU =====")
+    print("1 - Cadastrar valores")
+    print("2 - Exibir lista")
+    print("3 - Ordenar lista")
+    print("4 - Realizar busca sequencial")
+    print("5 - Realizar busca binária")
+    print("0 - Sair")
+
+    opcao = int(input("Escolha uma opção: "))
+
+    if opcao == 1:
+
+        valor = int(input("Digite o valor: "))
+        lista.append(valor)
+
+        ordenada = False
+
+        print("Valor cadastrado.")
+
+    elif opcao == 2:
+
+        print("Lista:", lista)
+
+    elif opcao == 3:
+
+        # Ordenação manual
+        for i in range(len(lista)):
+            for j in range(i + 1, len(lista)):
+
+                if lista[i] > lista[j]:
+                    aux = lista[i]
+                    lista[i] = lista[j]
+                    lista[j] = aux
+
+        ordenada = True
+
+        print("Lista ordenada:", lista)
+
+    elif opcao == 4:
+
+        valor = int(input("Digite o valor procurado: "))
+
+        encontrado = -1
+
+        for i in range(len(lista)):
+            if lista[i] == valor:
+                encontrado = i
+                break
+
+        if encontrado != -1:
+            print("Valor encontrado na posição:", encontrado)
+        else:
+            print("Valor não encontrado.")
+
+    elif opcao == 5:
+
+        if not ordenada:
+            print("A lista precisa estar ordenada para realizar a busca binária.")
+        else:
+
+            valor = int(input("Digite o valor procurado: "))
+
+            inicio = 0
+            fim = len(lista) - 1
+            encontrado = -1
+
+            while inicio <= fim:
+
+                meio = (inicio + fim) // 2
+
+                if lista[meio] == valor:
+                    encontrado = meio
+                    break
+
+                elif valor < lista[meio]:
+                    fim = meio - 1
+
+                else:
+                    inicio = meio + 1
+
+            if encontrado != -1:
+                print("Valor encontrado na posição:", encontrado)
+            else:
+                print("Valor não encontrado.")
+
+    elif opcao == 0:
+
+        print("Programa encerrado.")
+        break
+
+    else:
+        print("Opção inválida.")
