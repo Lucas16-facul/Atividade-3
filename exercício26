@@ -1,0 +1,43 @@
+produtos = ["Arroz", "Feijão", "Macarrão", "Açúcar", "Café"]
+codigos = [101, 102, 103, 104, 105]
+
+codigo = int(input("Digite o código do produto: "))
+
+# Busca sequencial
+comparacoes_sequencial = 0
+posicao_sequencial = -1
+
+for i in range(len(codigos)):
+    comparacoes_sequencial += 1
+
+    if codigos[i] == codigo:
+        posicao_sequencial = i
+        break
+
+# Busca binária
+inicio = 0
+fim = len(codigos) - 1
+comparacoes_binaria = 0
+posicao_binaria = -1
+
+while inicio <= fim:
+    meio = (inicio + fim) // 2
+    comparacoes_binaria += 1
+
+    if codigos[meio] == codigo:
+        posicao_binaria = meio
+        break
+
+    elif codigo < codigos[meio]:
+        fim = meio - 1
+
+    else:
+        inicio = meio + 1
+
+print("Busca sequencial:")
+print("Posição:", posicao_sequencial)
+print("Comparações:", comparacoes_sequencial)
+
+print("\nBusca binária:")
+print("Posição:", posicao_binaria)
+print("Comparações:", comparacoes_binaria)
