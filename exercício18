@@ -1,0 +1,29 @@
+def busca_binaria_comparacoes(lista, valor):
+    inicio = 0
+    fim = len(lista) - 1
+    comparacoes = 0
+
+    while inicio <= fim:
+        meio = (inicio + fim) // 2
+        comparacoes += 1
+
+        if lista[meio] == valor:
+            return meio, comparacoes
+
+        elif valor < lista[meio]:
+            fim = meio - 1
+
+        else:
+            inicio = meio + 1
+
+    return -1, comparacoes
+
+
+numeros = [10, 20, 30, 40, 50, 60, 70]
+
+valor = int(input("Digite o valor: "))
+
+indice, comparacoes = busca_binaria_comparacoes(numeros, valor)
+
+print("Índice:", indice)
+print("Comparações:", comparacoes)
