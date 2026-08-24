@@ -1,0 +1,43 @@
+numeros = []
+
+for i in range(1, 1001):
+    numeros.append(i)
+
+valor = numeros[999]
+
+# Busca sequencial
+comparacoes_sequencial = 0
+
+for i in range(len(numeros)):
+    comparacoes_sequencial += 1
+
+    if numeros[i] == valor:
+        break
+
+# Busca binária
+inicio = 0
+fim = len(numeros) - 1
+comparacoes_binaria = 0
+
+while inicio <= fim:
+    meio = (inicio + fim) // 2
+    comparacoes_binaria += 1
+
+    if numeros[meio] == valor:
+        break
+
+    elif valor < numeros[meio]:
+        fim = meio - 1
+
+    else:
+        inicio = meio + 1
+
+print("Busca sequencial:")
+print("Comparações:", comparacoes_sequencial)
+
+print("\nBusca binária:")
+print("Comparações:", comparacoes_binaria)
+
+print("\nConclusão:")
+print("A busca binária realizou muito menos comparações.")
+print("Isso acontece porque ela elimina metade dos elementos a cada tentativa.")
