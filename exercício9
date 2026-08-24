@@ -1,0 +1,15 @@
+matriculas = [1001, 1002, 1003, 1004, 1005, 1006]
+
+matricula = int(input("Digite a matrícula: "))
+
+encontrado = False
+
+for i in range(len(matriculas)):
+    if matriculas[i] == matricula:
+        encontrado = True
+        break
+
+if encontrado:
+    print("Aluno cadastrado.")
+else:
+    print("Aluno não cadastrado.")
