@@ -1,0 +1,26 @@
+codigos = [101, 105, 110, 115, 120, 125, 130, 135]
+
+codigo = int(input("Digite o código do livro: "))
+
+inicio = 0
+fim = len(codigos) - 1
+encontrado = -1
+
+while inicio <= fim:
+    meio = (inicio + fim) // 2
+
+    if codigos[meio] == codigo:
+        encontrado = meio
+        break
+
+    elif codigo < codigos[meio]:
+        fim = meio - 1
+
+    else:
+        inicio = meio + 1
+
+if encontrado != -1:
+    print("Livro disponível.")
+    print("Posição:", encontrado)
+else:
+    print("Livro não disponível.")
