@@ -1,0 +1,17 @@
+produtos = ["Arroz", "Feijão", "Macarrão", "Açúcar", "Café"]
+precos = [25.00, 8.50, 6.00, 4.50, 12.00]
+
+produto = input("Digite o nome do produto: ")
+
+posicao = -1
+
+for i in range(len(produtos)):
+    if produtos[i].lower() == produto.lower():
+        posicao = i
+        break
+
+if posicao != -1:
+    print("Produto:", produtos[posicao])
+    print("Preço: R$", precos[posicao])
+else:
+    print("Produto não encontrado.")
