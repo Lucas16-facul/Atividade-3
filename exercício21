@@ -1,0 +1,25 @@
+numeros = [10, 20, 20, 20, 30, 40, 50, 50, 60]
+
+valor = int(input("Digite o valor: "))
+
+inicio = 0
+fim = len(numeros) - 1
+encontrado = -1
+
+while inicio <= fim:
+    meio = (inicio + fim) // 2
+
+    if numeros[meio] == valor:
+        encontrado = meio
+        break
+
+    elif valor < numeros[meio]:
+        fim = meio - 1
+
+    else:
+        inicio = meio + 1
+
+if encontrado != -1:
+    print("Valor encontrado na posição:", encontrado)
+else:
+    print("Valor não encontrado.")
