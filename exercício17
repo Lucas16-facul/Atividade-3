@@ -1,0 +1,25 @@
+codigos = [100, 200, 300, 400, 500, 600, 700, 800]
+
+codigo = int(input("Digite o código do produto: "))
+
+inicio = 0
+fim = len(codigos) - 1
+encontrado = False
+
+while inicio <= fim:
+    meio = (inicio + fim) // 2
+
+    if codigos[meio] == codigo:
+        encontrado = True
+        break
+
+    elif codigo < codigos[meio]:
+        fim = meio - 1
+
+    else:
+        inicio = meio + 1
+
+if encontrado:
+    print("Produto cadastrado.")
+else:
+    print("Produto não cadastrado.")
