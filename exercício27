@@ -1,0 +1,57 @@
+matriculas = [1050, 1020, 1080, 1010, 1040, 1030]
+
+print("1 - Busca sequencial")
+print("2 - Busca binária")
+
+opcao = int(input("Escolha uma opção: "))
+
+matricula = int(input("Digite a matrícula: "))
+
+if opcao == 1:
+
+    encontrado = -1
+
+    for i in range(len(matriculas)):
+        if matriculas[i] == matricula:
+            encontrado = i
+            break
+
+    if encontrado != -1:
+        print("Matrícula encontrada na posição:", encontrado)
+    else:
+        print("Matrícula não encontrada.")
+
+elif opcao == 2:
+
+    # Ordenação manual
+    for i in range(len(matriculas)):
+        for j in range(i + 1, len(matriculas)):
+            if matriculas[i] > matriculas[j]:
+                aux = matriculas[i]
+                matriculas[i] = matriculas[j]
+                matriculas[j] = aux
+
+    inicio = 0
+    fim = len(matriculas) - 1
+    encontrado = -1
+
+    while inicio <= fim:
+        meio = (inicio + fim) // 2
+
+        if matriculas[meio] == matricula:
+            encontrado = meio
+            break
+
+        elif matricula < matriculas[meio]:
+            fim = meio - 1
+
+        else:
+            inicio = meio + 1
+
+    if encontrado != -1:
+        print("Matrícula encontrada na posição:", encontrado)
+    else:
+        print("Matrícula não encontrada.")
+
+else:
+    print("Opção inválida.")
