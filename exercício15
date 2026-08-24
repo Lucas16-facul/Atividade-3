@@ -1,0 +1,25 @@
+nomes = ["Ana", "Bruno", "Carlos", "Daniela", "Eduardo", "Fernanda"]
+
+nome = input("Digite o nome: ")
+
+inicio = 0
+fim = len(nomes) - 1
+encontrado = False
+
+while inicio <= fim:
+    meio = (inicio + fim) // 2
+
+    if nomes[meio].lower() == nome.lower():
+        encontrado = True
+        break
+
+    elif nome.lower() < nomes[meio].lower():
+        fim = meio - 1
+
+    else:
+        inicio = meio + 1
+
+if encontrado:
+    print("Nome encontrado.")
+else:
+    print("Nome não encontrado.")
