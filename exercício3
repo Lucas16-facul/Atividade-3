@@ -1,0 +1,15 @@
+def busca_sequencial(lista, valor):
+    for i in range(len(lista)):
+        if lista[i] == valor:
+            return i
+
+    return -1
+
+
+numeros = [10, 20, 30, 40, 50]
+
+valor = int(input("Digite o valor procurado: "))
+
+resultado = busca_sequencial(numeros, valor)
+
+print("Índice:", resultado)
