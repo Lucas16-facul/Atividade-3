@@ -1,0 +1,13 @@
+def existe(lista, numero):
+    for i in range(len(lista)):
+        if lista[i] == numero:
+            return True
+
+    return False
+
+
+numeros = [5, 10, 15, 20, 25]
+
+valor = int(input("Digite um número: "))
+
+print(existe(numeros, valor))
