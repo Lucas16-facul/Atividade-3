@@ -1,0 +1,26 @@
+cpfs = [
+    "11111111111",
+    "22222222222",
+    "33333333333",
+    "44444444444",
+    "55555555555"
+]
+
+cpf = input("Digite o CPF: ")
+
+comparacoes = 0
+encontrado = False
+
+for i in range(len(cpfs)):
+    comparacoes += 1
+
+    if cpfs[i] == cpf:
+        encontrado = True
+        break
+
+if encontrado:
+    print("CPF cadastrado.")
+else:
+    print("CPF não cadastrado.")
+
+print("Comparações realizadas:", comparacoes)
