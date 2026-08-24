@@ -1,0 +1,10 @@
+palavras = ["computador", "casa", "programacao", "python", "algoritmo"]
+
+maior_palavra = palavras[0]
+
+for i in range(1, len(palavras)):
+    if len(palavras[i]) > len(maior_palavra):
+        maior_palavra = palavras[i]
+
+print("Palavra com maior quantidade de caracteres:", maior_palavra)
+print("Quantidade de caracteres:", len(maior_palavra))
