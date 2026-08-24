@@ -1,0 +1,21 @@
+numeros = [10, 20, 30, 40, 50, 60]
+
+valor = int(input("Digite o valor procurado: "))
+
+comparacoes = 0
+encontrado = False
+
+for i in range(len(numeros)):
+    comparacoes += 1
+
+    if numeros[i] == valor:
+        print("Valor encontrado:", numeros[i])
+        print("Posição:", i)
+        print("Comparações:", comparacoes)
+
+        encontrado = True
+        break
+
+if not encontrado:
+    print("Valor não encontrado.")
+    print("Comparações:", comparacoes)
